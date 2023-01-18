@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApnaCliq - Sign Up</title>
+    <link rel="stylesheet" href="/Styles/signin.css">
+</head>
+<body>
+    <div class="main">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="signin()">Sign In</button>
+                <button type="button" class="toggle-btn" onclick="signup()">Sign Up</button>
+            </div>
+            <form id="signin" class="input-group">
+                <input type="text" class="input-field" placeholder="User ID"
+                required>
+                <input type="password" class="input-field" placeholder="Enter Password"
+                required>
+                <input type="checkbox" class="checkbox"><span>Rember Password</span>
+                <p id="admin">Log in for <a href="/adminsignin.html">Admin</a>.</p>
+                <button type="submit" class="submit-btn">Sign In</button>
+            </form>
+            <form id="signup" class="input-group">
+                <input type="text" class="input-field" placeholder="User ID"
+                required>
+                <input type="email" class="input-field" placeholder="Email ID"
+                required>
+                <input type="password" class="input-field" placeholder="Enter Password"
+                required>
+                <input type="checkbox" class="checkbox"><span>I agree to the <a href="https://www.tatacliq.com/terms-of-use">Term of Use</a> and <a href="https://www.tatacliq.com/privacy-policy">Privacy Policy</a>.</span>
+                <button type="submit" class="submit-btn">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+<script src="/Scripts/signin.js"></script>
