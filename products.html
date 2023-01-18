@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Styles/index.css">
+</head>
+<body>
+    <nav></nav>
+    <main>
+        <div id="container">
+            
+        </div>
+    </main>
+    <footer></footer>
+</body>
+   <script>
+     let products=JSON.parse(localStorage.getItem("products"))||[]
+     let container=document.getElementById("container")
+
+     displayProducts(products)
+     function displayProducts(data){
+          container.innerHTML=null
+          let cartArr=[]
+          data.forEach((e)=>{
+             let cart=
+             `<div class="cart">
+             <div class="image"><img src=${e.image}></div>
+             <h3 class="title">${e.title}</h3>
+             <p class="desc">${e.description}</p>
+             <h3 class="price">${e.price}</h3>
+             <div class="rating"><h4>${e.rating.rate} (${e.rating.count})</h4></div>
+           </div>`
+
+            cartArr.push(cart)
+          })
+
+          container.innerHTML=cartArr.join("")
+     }
+
+   </script>
+</html>
