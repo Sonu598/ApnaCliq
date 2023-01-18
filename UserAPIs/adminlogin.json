@@ -1,0 +1,32 @@
+[
+    {
+    "id": 1,
+    "User ID": "Ishupriya001",
+    "Email ID": "ishupriya@apnacliq.com",
+    "Password": "admin@00"
+    },
+    {
+    "id": 2,
+    "User ID": "Subham002",
+    "Email ID": "Subham@apnacliq.com",
+    "Password": "admin@00"
+    },
+    {
+    "id": 3,
+    "User ID": "Indrajeet003",
+    "Email ID": "indrajeet@apnacliq.com",
+    "Password": "admin@00"
+    },
+    {
+    "id": 4,
+    "User ID": "Vishal004",
+    "Email ID": "vishal@apnacliq.com",
+    "Password": "admin@00"
+    },
+    {
+    "id": 5,
+    "User ID": "Nirakar005",
+    "Email ID": "nirakar@apnacliq.com",
+    "Password": "admin@00"
+    }
+]
