@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navbar</title>
+    <link rel="stylesheet" href="Styles/header.css">
+
+    <!-- google fonts -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <style>
+        #ddown {
+            display: none;
+            width: 70%;
+            margin: auto;
+            position: absolute;
+            top: 100px;
+            left: 250px;
+            z-index: 1;
+
+        }
+
+        #categories_submenu {
+
+            display: flex;
+
+            gap: 30px;
+            background: #FFFFFF;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            padding: 20px;
+        }
+
+        .submenuItems {
+
+            color: #9e9c9c;
+            margin-top: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #cacaca;
+            width: 200px;
+            cursor: pointer;
+        }
+
+        .submenu1 {
+            /* display: none; */
+        }
+
+        .submenu1>div {
+            padding: 6px;
+
+        }
+
+        .submenu1>div>a {
+            text-decoration: none;
+            color: #9e9c9c;
+        }
+
+        .submenu1>div>a:hover {
+            color: red;
+        }
+
+        .submenuItems:hover {
+            color: black;
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div id="nav">
+        <div id="nav_section_left">
+            <a href="#"> <img id="nav_logo" src="Images/apna-logo.png" alt="apna-logo"></a>
+        </div>
+
+
+
+        <div id="nav_section_right">
+            <div id="nav_right_top">
+                <div id="nav_name" style="  color: aliceblue;"><a href="#">APNA CLiQ Luxury</a></div>
+                <div id="nav_rightBtn">
+                    <ul>
+                        <li><a href="#">CLiQ Cash</a></li>
+                        <li><a href="#">Gift Card</a></li>
+                        <li><a href="#">CLiQ Care</a></li>
+                        <li><a href="#">Track Orders</a></li>
+                        <li><a href="#">Sign in / Sign Up</a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div id="nav_bottom">
+                <div id="btn_bottom_left">
+                    <ul>
+                        <li id="btncategories">Categories <span class="material-symbols-outlined">
+                                expand_more
+                            </span></li>
+                        <li>Brands<span class="material-symbols-outlined">
+                                expand_more
+                            </span></li>
+                    </ul>
+                </div>
+                <!-- ------------------- submenulist ------------------- -->
+
+
+
+
+                <!-- ------------------- submenulist End ------------------- -->
+
+                <div id="btn_search">
+                    <span id="search_logo" class="material-symbols-outlined">
+                        search
+                    </span>
+                    <input id="search" type="text" placeholder="search" name="search">
+                    <span id="closeBtn" class="material-symbols-outlined">
+                        close
+                    </span>
+                </div>
+
+
+
+                <div id="btn_bottom_right">
+                    <ul>
+                        <li><a href="#"><span class="material-symbols-outlined">
+                                    favorite
+                                </span></a></li>
+                        <li><a href="#"><span class="material-symbols-outlined">
+                                    shopping_bag
+                                </span></a><span id="card_count">0</span></li>
+                        <li id="btn_menu"><a href="#"><span class="material-symbols-outlined">
+                                    menu
+                                </span></a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="ddown">
+        <div id="categories_submenu">
+            <div id="submenu1" itemid="main_submenu">
+                <div class="submenuItems"> Women's Fastion</div>
+                <div class="submenuItems">Man"s Fastion</div>
+                <div class="submenuItems">Kid's Fastion</div>
+                <div class="submenuItems">Home & Kitchen</div>
+                <div class="submenuItems">Beauty</div>
+                <div class="submenuItems">Gadgets</div>
+                <div class="submenuItems">Jewellery</div>
+                <div class="submenuItems">Accessories</div>
+            </div>
+            <div class="submenu1">
+                <div style="color: black;">Shop All Ethnic Wear</div>
+                <div><a href="">Kurti & kurta</a></div>
+                <div> <a href="">suits</a></div>
+                <div> <a href="">Sarees</a></div>
+                <div> <a href="">Bottoms</a></div>
+                <div> <a href="">Bloues & fabrics</a></div>
+                <div><a href="">Dipatta</a></div>
+                <div style="color: black;">Shop All Western Wear</div>
+                <div><a href="">Top & Tunic</a></div>
+                <div><a href="">Dresses</a></div>
+                <div> <a href="">Jeans</a></div>
+                <div> <a href="">Shirts</a></div>
+                <div> <a href="">Trousers</a></div>
+                <div><a href="">Skirt</a></div>
+                <div><a href="">shorts</a></div>
+            </div>
+            <div class="submenu1">
+                <div a href="#" style="color: black;">Shop All Ethnic Wear</div>
+                <div><a href="">Kurti & kurta</a></div>
+                <div> <a href="">suits</a></div>
+                <div> <a href="">Sarees</a></div>
+                <div> <a href="">Bottoms</a></div>
+                <div> <a href="">Bloues & fabrics</a></div>
+                <div><a href="">Dipatta</a></div>
+                <div> <a href="" style="color: black;">Shop All Western Wear</a></div>
+                <div><a href="">Top & Tunic</a></div>
+                <div><a href="">Dresses</a></div>
+                <div> <a href="">Jeans</a></div>
+                <div> <a href="">Shirts</a></div>
+                <div> <a href="">Trousers</a></div>
+                <div><a href="">Skirt</a></div>
+                <div><a href="">shorts</a></div>
+            </div>
+            <div class="submenu1">
+                <div style="color: black;">Shop All Ethnic Wear</div>
+                <div><a href="">Kurti & kurta</a></div>
+                <div> <a href="">suits</a></div>
+                <div> <a href="">Sarees</a></div>
+                <div> <a href="">Bottoms</a></div>
+                <div> <a href="">Bloues & fabrics</a></div>
+                <div><a href="">Dipatta</a></div>
+                <div> <a href="" style="color: black;">Shop All Western Wear</a></div>
+                <div><a href="">Top & Tunic</a></div>
+                <div><a href="">Dresses</a></div>
+                <div> <a href="">Jeans</a></div>
+                <div> <a href="">Shirts</a></div>
+                <div> <a href="">Trousers</a></div>
+                <div><a href="">Skirt</a></div>
+                <div><a href="">shorts</a></div>
+            </div>
+            <div class="submenu1">
+                <div style="color: black;">Shop All Ethnic Wear</div>
+                <div><a href="">Kurti & kurta</a></div>
+                <div> <a href="">suits</a></div>
+                <div> <a href="">Sarees</a></div>
+                <div> <a href="">Bottoms</a></div>
+                <div> <a href="">Bloues & fabrics</a></div>
+                <div><a href="">Dipatta</a></div>
+                <div> <a href="" style="color: black;">Shop All Western Wear</a></div>
+                <div><a href="">Top & Tunic</a></div>
+                <div><a href="">Dresses</a></div>
+                <div> <a href="">Jeans</a></div>
+                <div> <a href="">Shirts</a></div>
+                <div> <a href="">Trousers</a></div>
+                <div><a href="">Skirt</a></div>
+                <div><a href="">shorts</a></div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- <div id="main" style="background: red; height: 1000px;">
+        <h1>hello</h1>
+    </div> -->
+
+</body>
+
+</html>
+
+<!-- $(function () {
+    $('#id').load('header.html');
+}) -->
+<script>
+
+    //    Dynamic searchBar placeholder change 
+    let placeholders = ["Products", "Brands", "Categories"];
+    let index = 0;
+
+    setInterval(() => {
+        if (index == placeholders.length) {
+            index = 0;
+        }
+        search.placeholder = `Search for ${placeholders[index]}`;
+        index++;
+    }, 2000);
+
+    let searchbtn = document.getElementById('search');
+    let closeBtn = document.getElementById('closeBtn');
+    searchbtn.addEventListener('click', () => {
+        btn_search.style.backgroundColor = "#ffffff";
+        search.style.backgroundColor = "#ffffff";
+        closeBtn.style.display = "block";
+
+    });
+
+    closeBtn.addEventListener('click', () => {
+
+        btn_search.style.backgroundColor = "#4A4A4A";
+        search.style.backgroundColor = "#4A4A4A";
+        closeBtn.style.display = "none";
+    });
+
+    /* ---------------- dropdown menu scripts ------------- */
+    let buttonCate = document.getElementById("btncategories");
+    let ddown = document.getElementById("ddown");
+
+    buttonCate.addEventListener('click', (e) => {
+        if (ddown.style.display == 'none' || e.target.id == 'buttonCate') {
+            ddown.style.display = "block"
+        } else {
+            ddown.style.display = "none"
+        }
+
+    });
+    
+
+
+</script>
