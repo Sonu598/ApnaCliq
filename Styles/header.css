@@ -11,9 +11,15 @@
 #nav {
     background: #212121;
     height: 100px;
+    width: 100%;
     display: flex;
-
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: .5s;
 }
+
+#navScroll {}
 
 #nav a {
     text-decoration: none;
@@ -25,7 +31,8 @@
 #nav_logo {
     width: 180px;
     height: 70px;
-    margin: 20px 25px 0px 30px
+    margin: 20px 25px 0px 30px;
+    transition: .5s;
 }
 
 
@@ -48,7 +55,7 @@
     display: flex;
     justify-content: space-between;
     padding: 4px 0 4px 0;
-    /*  */
+
 }
 
 #nav_name {
@@ -80,16 +87,26 @@
     justify-content: space-between;
     /* border: 2px solid red; */
     margin-top: 10px;
+
+}
+
+#btn_bottom_left>ul>li {
+    /* border: 2px solid red;  */
+    margin-left: -20px;
+
 }
 
 #btn_bottom_left>ul>li {
     display: flex;
-    padding-top: 10px;
-
+    padding: 15px 12px 13px 20px;
     font-size: 16px;
     font-weight: 500;
     font-family: Arial, Helvetica, sans-serif;
-    color: aliceblue;
+    color: white;
+
+    background: #212121;
+    margin: 0;
+
 }
 
 #btn_bottom_left,
@@ -98,8 +115,7 @@ ul {
     float: right;
     margin-left: 7px;
     list-style: none;
-    gap: 30px;
-
+    /* gap: 30px; */
 
 }
 
@@ -109,6 +125,7 @@ ul {
     border-radius: 7px;
     width: 63%;
     display: flex;
+
 }
 
 #search {
@@ -140,6 +157,10 @@ ul {
 
 }
 
+#btn_bottom_right>ul>li {
+    margin-right: 20px;
+}
+
 #card_count {
     display: block;
     position: relative;
@@ -148,7 +169,7 @@ ul {
     text-align: center;
     width: 15px;
     color: white;
-
+    z-index: 1;
     margin: -30px 0px 0px 15px;
 
 }
@@ -215,4 +236,144 @@ ul {
         margin: 0%;
         padding-top: 5px;
     }
+}
+
+/* ********************************************* */
+
+#loginSumMenu {
+    display: none;
+    position: absolute;
+    right: 80px;
+    z-index: 2;
+}
+
+#sinup_ddown {
+    background: white;
+    width: 200px;
+    padding: 10px;
+    z-index: 2;
+
+}
+
+#sinup_ddown a {
+    text-decoration: none;
+    margin-left: 20px;
+    color: rgb(32, 32, 32);
+    font-weight: 500;
+    font-size: 17px;
+}
+
+#sinup_ddown>div {
+
+    margin: 10px;
+    padding: 10px;
+
+    /* border: 1px solid red; */
+}
+
+#sinup_ddown>div span {
+    position: absolute;
+    margin: -3px 0px 0px -30px;
+    padding-right: 20px;
+}
+
+#dd_login {
+    background: red;
+    margin-top: 10px;
+    width: 150px;
+    border-radius: 15px;
+}
+
+#dd_login a {
+    color: white;
+}
+
+#arrow_drop_up {
+    position: absolute;
+    margin: -15px 0 0 150px;
+    color: white;
+}
+
+/* ---------------------- Drop Down CSS------------------------------- */
+
+#ddown {
+    display: none;
+    width: 70%;
+    position: absolute;
+    top: 100px;
+    left: 250px;
+    /* border: 1px solid red; */
+    z-index: 1;
+    overflow: hidden;
+}
+
+#categories_submenu {
+
+    display: flex;
+
+    gap: 30px;
+    background: #FFFFFF;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 20px;
+}
+
+.submenuItems {
+
+    color: #9e9c9c;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #cacaca;
+    width: 200px;
+    cursor: pointer;
+}
+
+.submenu1 {
+    /* display: none; */
+}
+
+.submenu1>div {
+    padding: 6px;
+
+}
+
+.submenu1>div>a {
+    text-decoration: none;
+    color: #9e9c9c;
+}
+
+.submenu1>div>a:hover {
+    color: red;
+}
+
+.submenuItems:hover {
+    color: black;
+
+}
+
+.submenuItems {
+    display: flex;
+    /* border: 1px solid; */
+    justify-content: space-between;
+
+}
+
+.submenuItems>:nth-child(1) {
+
+    /* border: 1px solid red; */
+    padding-bottom: 10px;
+}
+
+.itemsArrow {
+
+    display: none;
+
+}
+
+.submenuItems:hover .itemsArrow {
+    display: block;
+
+}
+
+#arrow1 {
+    transition: all 0.4s ease;
 }

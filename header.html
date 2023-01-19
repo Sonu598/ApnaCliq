@@ -15,59 +15,7 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
     <style>
-        #ddown {
-            display: none;
-            width: 70%;
-            margin: auto;
-            position: absolute;
-            top: 100px;
-            left: 250px;
-            z-index: 1;
-
-        }
-
-        #categories_submenu {
-
-            display: flex;
-
-            gap: 30px;
-            background: #FFFFFF;
-            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-            padding: 20px;
-        }
-
-        .submenuItems {
-
-            color: #9e9c9c;
-            margin-top: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #cacaca;
-            width: 200px;
-            cursor: pointer;
-        }
-
-        .submenu1 {
-            /* display: none; */
-        }
-
-        .submenu1>div {
-            padding: 6px;
-
-        }
-
-        .submenu1>div>a {
-            text-decoration: none;
-            color: #9e9c9c;
-        }
-
-        .submenu1>div>a:hover {
-            color: red;
-        }
-
-        .submenuItems:hover {
-            color: black;
-
-        }
+        
     </style>
 </head>
 
@@ -77,43 +25,80 @@
 
     <div id="nav">
         <div id="nav_section_left">
-            <a href="#"> <img id="nav_logo" src="Images/apna-logo.png" alt="apna-logo"></a>
+            <a href="index.html"> <img id="nav_logo" src="Images/apna-logo.png" alt="apna-logo"></a>
         </div>
 
 
 
         <div id="nav_section_right">
             <div id="nav_right_top">
-                <div id="nav_name" style="  color: aliceblue;"><a href="#">APNA CLiQ Luxury</a></div>
+                <div id="nav_name" style="  color: aliceblue;"><a href="#">APNA CLiQ Luxury</a>
+                </div>
+
                 <div id="nav_rightBtn">
                     <ul>
                         <li><a href="#">CLiQ Cash</a></li>
                         <li><a href="#">Gift Card</a></li>
                         <li><a href="#">CLiQ Care</a></li>
                         <li><a href="#">Track Orders</a></li>
-                        <li><a href="#">Sign in / Sign Up</a></li>
+                        <li id="sigin_signUp_Btn"><a href="#">Sign in / Sign Up</a></li>
 
                     </ul>
                 </div>
             </div>
 
+            <!-- -------------------- siginUp Drop down---------------------- -->
+
+
+            <div id="loginSumMenu">
+
+
+                <span id="arrow_drop_up" class="material-symbols-outlined">
+                    arrow_drop_up
+                </span>
+                <div id="sinup_ddown">
+                    <div id="dd_login"><a href="signin.html">login/Register</a></div>
+                    <div><a href="#"> <span class="material-symbols-outlined">
+                                account_circle
+                            </span>My account</a></div>
+                    <div><a href="#"><span class="material-symbols-outlined">
+                                shopping_bag
+                            </span>Order History</a></div>
+                    <div><a href=""><span class="material-symbols-outlined">
+                                favorite
+                            </span> My Wishlist</a></div>
+                    <div><a href=""><span class="material-symbols-outlined">
+                                notifications
+                            </span>Alerts & Coupon</a></div>
+                    <div><a href=""><span class="material-symbols-outlined">
+                                redeem
+                            </span>Gift Card</a></div>
+                    <div><a href=""><span class="material-symbols-outlined">
+                                currency_rupee
+                            </span>CliQ Cash</a></div>
+                </div>
+
+            </div>
+            <!-- --------------------siginUp Drop down End---------------------- -->
+
+
+
             <div id="nav_bottom">
                 <div id="btn_bottom_left">
                     <ul>
-                        <li id="btncategories">Categories <span class="material-symbols-outlined">
+                        <li id="btncategories">Categories <span id="arrow1" class="material-symbols-outlined">
                                 expand_more
                             </span></li>
-                        <li>Brands<span class="material-symbols-outlined">
+                        <li id="btnbrand">Brands<span class="material-symbols-outlined">
                                 expand_more
                             </span></li>
                     </ul>
                 </div>
-                <!-- ------------------- submenulist ------------------- -->
+            
 
 
 
-
-                <!-- ------------------- submenulist End ------------------- -->
+             
 
                 <div id="btn_search">
                     <span id="search_logo" class="material-symbols-outlined">
@@ -144,27 +129,102 @@
             </div>
         </div>
     </div>
+
+       <!-- ------------------- submenulist ------------------- -->
+
     <div id="ddown">
         <div id="categories_submenu">
-            <div id="submenu1" itemid="main_submenu">
-                <div class="submenuItems"> Women's Fastion</div>
-                <div class="submenuItems">Man"s Fastion</div>
-                <div class="submenuItems">Kid's Fastion</div>
-                <div class="submenuItems">Home & Kitchen</div>
-                <div class="submenuItems">Beauty</div>
-                <div class="submenuItems">Gadgets</div>
-                <div class="submenuItems">Jewellery</div>
-                <div class="submenuItems">Accessories</div>
+            <div class="submenu1" id="submenuItems">
+                <div class="submenuItems">
+                    <div>
+                        <h4>Women's Fastion</h4>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined itemsArrow">
+                            navigate_next
+                        </span>
+                    </div>
+                </div>
+                <div class="submenuItems">
+                    <div>
+                        <h4>Man"s Fastion</h4>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined itemsArrow">
+                            navigate_next
+                        </span>
+                    </div>
+                </div>
+                <div class="submenuItems">
+                    <div>
+                        <h4>Kid's Fastion </h4>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined itemsArrow">
+                            navigate_next
+                        </span>
+                    </div>
+                </div>
+                <div class="submenuItems">
+                    <div>
+                        <h4>Home & Kitchen</h4>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined itemsArrow">
+                            navigate_next
+                        </span>
+                    </div>
+                </div>
+                <div class="submenuItems">
+                    <div>
+                        <h4>Beauty</h4>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined itemsArrow ">
+                            navigate_next
+                        </span>
+                    </div>
+                </div>
+                <div class="submenuItems">
+                    <div>
+                        <h4>Gadgets</h4>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined itemsArrow">
+                            navigate_next
+                        </span>
+                    </div>
+                </div>
+                <div class="submenuItems">
+                    <div>
+                        <h4>Jewellery</h4>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined itemsArrow">
+                            navigate_next
+                        </span>
+                    </div>
+                </div>
+                <div class="submenuItems">
+                    <div>
+                        <h4>Accessories</h4>
+                    </div>
+                    <div>
+                        <span class="material-symbols-outlined itemsArrow">
+                            navigate_next
+                        </span>
+                    </div>
+                </div>
             </div>
             <div class="submenu1">
-                <div style="color: black;">Shop All Ethnic Wear</div>
+                <div style="color: #212121; font-weight: bold;">Shop All Ethnic Wear</div>
                 <div><a href="">Kurti & kurta</a></div>
                 <div> <a href="">suits</a></div>
                 <div> <a href="">Sarees</a></div>
                 <div> <a href="">Bottoms</a></div>
                 <div> <a href="">Bloues & fabrics</a></div>
                 <div><a href="">Dipatta</a></div>
-                <div style="color: black;">Shop All Western Wear</div>
+                <div style="color: #212121; font-weight: bold;">Shop All Western Wear</div>
                 <div><a href="">Top & Tunic</a></div>
                 <div><a href="">Dresses</a></div>
                 <div> <a href="">Jeans</a></div>
@@ -174,14 +234,14 @@
                 <div><a href="">shorts</a></div>
             </div>
             <div class="submenu1">
-                <div a href="#" style="color: black;">Shop All Ethnic Wear</div>
+                <div a href="#" style="color: #212121; font-weight: bold;">Shop All Ethnic Wear</div>
                 <div><a href="">Kurti & kurta</a></div>
                 <div> <a href="">suits</a></div>
                 <div> <a href="">Sarees</a></div>
                 <div> <a href="">Bottoms</a></div>
                 <div> <a href="">Bloues & fabrics</a></div>
                 <div><a href="">Dipatta</a></div>
-                <div> <a href="" style="color: black;">Shop All Western Wear</a></div>
+                <div> <a href="" style="color:  #212121; font-weight: bold;">Shop All Western Wear</a></div>
                 <div><a href="">Top & Tunic</a></div>
                 <div><a href="">Dresses</a></div>
                 <div> <a href="">Jeans</a></div>
@@ -191,14 +251,14 @@
                 <div><a href="">shorts</a></div>
             </div>
             <div class="submenu1">
-                <div style="color: black;">Shop All Ethnic Wear</div>
+                <div style="color: #212121; font-weight: bold;">Shop All Ethnic Wear</div>
                 <div><a href="">Kurti & kurta</a></div>
                 <div> <a href="">suits</a></div>
                 <div> <a href="">Sarees</a></div>
                 <div> <a href="">Bottoms</a></div>
                 <div> <a href="">Bloues & fabrics</a></div>
                 <div><a href="">Dipatta</a></div>
-                <div> <a href="" style="color: black;">Shop All Western Wear</a></div>
+                <div> <a href="" style="color:  #212121; font-weight: bold">Shop All Western Wear</a></div>
                 <div><a href="">Top & Tunic</a></div>
                 <div><a href="">Dresses</a></div>
                 <div> <a href="">Jeans</a></div>
@@ -208,14 +268,14 @@
                 <div><a href="">shorts</a></div>
             </div>
             <div class="submenu1">
-                <div style="color: black;">Shop All Ethnic Wear</div>
+                <div style="color:  #212121; font-weight: bold;">Shop All Ethnic Wear</div>
                 <div><a href="">Kurti & kurta</a></div>
                 <div> <a href="">suits</a></div>
                 <div> <a href="">Sarees</a></div>
                 <div> <a href="">Bottoms</a></div>
                 <div> <a href="">Bloues & fabrics</a></div>
                 <div><a href="">Dipatta</a></div>
-                <div> <a href="" style="color: black;">Shop All Western Wear</a></div>
+                <div> <a href="" style="color: #212121; font-weight: bold;">Shop All Western Wear</a></div>
                 <div><a href="">Top & Tunic</a></div>
                 <div><a href="">Dresses</a></div>
                 <div> <a href="">Jeans</a></div>
@@ -228,6 +288,7 @@
         </div>
     </div>
 
+   <!-- ------------------- submenulist End ------------------- -->
 
     <!-- <div id="main" style="background: red; height: 1000px;">
         <h1>hello</h1>
@@ -271,18 +332,74 @@
     });
 
     /* ---------------- dropdown menu scripts ------------- */
+
     let buttonCate = document.getElementById("btncategories");
     let ddown = document.getElementById("ddown");
+    let arrow1 = document.getElementById("arrow1")
 
-    buttonCate.addEventListener('click', (e) => {
-        if (ddown.style.display == 'none' || e.target.id == 'buttonCate') {
-            ddown.style.display = "block"
-        } else {
-            ddown.style.display = "none"
+
+    buttonCate.addEventListener('click', () => {
+
+        if (ddown.style.display === 'none') {
+            ddown.style.display = "block";
+            buttonCate.style.color = "black";
+            buttonCate.style.background = "white";
+            arrow1.style.transform = "rotateZ(180deg)";
+        }
+        // ddown.style.display = ddown.style.display === 'block' ? 'none' : 'block';
+        else {
+            ddown.style.display = "none";
+            buttonCate.style.color = "white";
+            buttonCate.style.background = "#212121";
+            arrow1.style.transform = "rotateZ(0deg)";
         }
 
-    });
-    
 
+    });
+
+    document.addEventListener("click", function (e) {
+        if (e.target !== ddown && e.target !== buttonCate) {
+            ddown.style.display = "none";
+            buttonCate.style.color = "white";
+            buttonCate.style.background = "#212121";
+            arrow1.style.transform = "rotateZ(0deg)";
+        }
+    });
+
+    // ---------------------------------------------
+
+    let siginSignUpBtn = document.getElementById("sigin_signUp_Btn");
+    let loginSumMenu = document.getElementById("loginSumMenu");
+
+    siginSignUpBtn.addEventListener('mouseover', () => {
+        loginSumMenu.style.display = loginSumMenu.style.display === 'block' ? 'none' : 'block';
+
+    });
+
+    document.addEventListener("click", function (e) {
+        if (e.target !== loginSumMenu && e.target !== siginSignUpBtn) {
+            loginSumMenu.style.display = "none";
+        }
+    });
+
+
+    let navTop = document.getElementById("nav_right_top");
+    let logo = document.getElementById("nav_logo");
+    let nav = document.getElementById("nav");
+
+    $(window).on('scroll', function () {
+        if ($(window).scrollTop()) {
+            // $('nav').addClass('black');
+            navTop.style.display = "none";
+            logo.style.marginTop = "4px";
+            nav.style.height = "80px";
+        }
+        else {
+            // $('nav').removeClass('black');
+            navTop.style.display = "flex";
+            logo.style.marginTop = "20px";
+            nav.style.height = "100px";
+        }
+    })
 
 </script>
