@@ -53,6 +53,7 @@ img{
     display: grid;
     grid-template-columns: repeat(5,1fr);
     gap: 25px;
+    line-height: 34px;
     
 }
 #container .cart{
@@ -66,6 +67,36 @@ img{
     justify-content: space-between;
 }
 
+.productsBtn{
+    background-color:rgb(58, 56, 56);
+    border: none;
+    color: white;
+    padding: 8px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 8px 0px;
+    cursor: pointer;
+}
+
+#functionality{
+    display: flex;
+    justify-content: space-between;
+    width: 97%;
+    margin: auto;
+    margin-bottom: 10px;
+   }
+  select,input,#filterByPrice-btn{
+    background-color: rgb(58, 56, 56);
+    color: white;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  select:hover,button:hover{
+    background-color: red;
+  }
 
 
 
@@ -102,6 +133,9 @@ img{
         margin-bottom: 32px;
     }
     #paymentImg{
+        display: none;
+    }
+    #filterByPrice{
         display: none;
     }
 }

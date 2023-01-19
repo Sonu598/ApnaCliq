@@ -6,25 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./Styles/index.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body>
-    <nav></nav>
+    <header></header>
+
     <main>
-        <div id="container">
-            
-        </div>
+      <div id="functionality">
+        <!-- <h3>Filters and Sort</h3> -->
+        <div id="filterByPrice">
+           <input type="number" id="lower" placeholder="Add Minimun Price">
+           <input type="number" id="upper" placeholder="Add Maximum Price">
+           <button id="filterByPrice-btn">submit</button>
+       </div>
+
+       <div id="sortDiv">
+           <select id="sort">
+               <option value="">Sort By Price</option>
+               <option value="lowToHigh">lowToHigh</option>
+               <option value="highToLow">highToLow</option>
+           </select>
+       </div>
+
+       <div id="sortByRating">
+           <select id="ratingSort">
+               <option value="">Filter By Rating</option>
+               <option value="1">1</option>
+               <option value="2">2</option>
+               <option value="3">3</option>
+               <option value="4">4</option>
+               <option value="5">5</option> 
+           </select>
+       </div>
+   </div>
+
+        <div id="container"> </div>
     </main>
     <footer></footer>
 </body>
    <script>
      let products=JSON.parse(localStorage.getItem("products"))||[]
+     let addToCart=JSON.parse(localStorage.getItem('addToCart'))||[]
      let container=document.getElementById("container")
 
      displayProducts(products)
+     
+     //display Products
      function displayProducts(data){
           container.innerHTML=null
           let cartArr=[]
-          data.forEach((e)=>{
+          data.forEach((e,i)=>{
              let cart=
              `<div class="cart">
              <div class="image"><img src=${e.image}></div>
@@ -32,13 +63,109 @@
              <p class="desc">${e.description}</p>
              <h3 class="price">${e.price}</h3>
              <div class="rating"><h4>${e.rating.rate} (${e.rating.count})</h4></div>
+             <button class="productsBtn" data-id=${i}>Add to Cart</button>
            </div>`
 
             cartArr.push(cart)
           })
 
           container.innerHTML=cartArr.join("")
+
+          //get all buttons and add event lisner to button
+          let buttons=document.getElementsByClassName("productsBtn")
+          for(let btn of buttons)
+          {
+      
+            btn.addEventListener("click",(e)=>{
+               console.log(data[e.target.dataset.id])
+               let index=e.target.dataset.id
+               
+               //checking element is present in addToCart page
+               let flag=true;
+               for(let i=0; i<addToCart.length; i++)
+                {
+                       if(addToCart[i].id===data[index].id)
+                       {
+                           flag=false
+                           break;
+                       }
+                }
+                if(flag)
+                {
+                   addToCart.push({...data[index],quantity:1})
+                   localStorage.setItem("addToCart",JSON.stringify(addToCart))
+                   alert("Product added to cart")
+                }else{
+                  alert("product already in cart")
+                }
+
+            })
+          }        
      }
+
+     //functionality
+     let lower=document.getElementById("lower")
+     let upper=document.getElementById('upper')
+     let filterByPrice_btn=document.getElementById("filterByPrice-btn")
+     filterByPrice_btn.addEventListener("click",()=>{
+         let filterData= products.filter((e)=>{
+            if(e.price>=lower.value && e.price<=upper.value)
+            {
+                return e
+            }
+        })
+        displayProducts(filterData)
+     })
+
+    //sort
+     let sort=document.getElementById("sort")
+     sort.addEventListener('change',()=>{
+      if(sort.value===""){
+        displayProducts(products)
+      }else if(sort.value==="highToLow"){
+        let filterData=products.sort((e,e2)=>{
+            return e2.price-e.price
+         })
+        displayProducts(filterData)
+      }else if(sort.value==="lowToHigh"){
+        let filterData=products.sort((e,e2)=>{
+            return e.price-e2.price
+         })
+        displayProducts(filterData)
+      }
+
+     })
+
+     //sortRating
+     let ratingSort=document.getElementById("ratingSort")
+     ratingSort.addEventListener("change",()=>{
+       if(ratingSort.value==="")
+       {
+        displayProducts(products)
+       }else{
+          let filterData=products.filter((e)=>{
+             return Math.floor(+(e.rating['rate']))===+ratingSort.value
+          })
+          console.log(filterData,ratingSort.value)
+          displayProducts(filterData)
+       }
+     })
+
+
 
    </script>
 </html>
+<script>
+  $(function () {
+      $('header').load('header.html');
+  }) 
+</script>
+
+<script>
+  $(function () {
+      $('footer').load('footer.html');
+  }) 
+</script>
+
+
+

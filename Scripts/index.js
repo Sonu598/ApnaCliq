@@ -112,7 +112,8 @@ let watchData=data.filter((el)=>{
 localStorage.setItem("products",JSON.stringify(watchData))
 })
  
-
+//search
+document.getElementById("search")
 
 
 
