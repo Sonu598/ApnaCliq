@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ApnaCliq - Sign Up</title>
     <link rel="stylesheet" href="/Styles/signin.css">
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body>
+    <div id="header"></div>
     <div class="main">
         <div class="form-box">
             <div class="button-box">
@@ -20,7 +23,7 @@
                 required>
                 <input type="password" class="input-field" placeholder="Enter Password"
                 required>
-                <input type="checkbox" class="checkbox"><span>Rember Password</span>
+                <input type="checkbox" class="checkbox"><span class="spans">Rember Password</span>
                 <p id="admin">Log in for <a href="/adminsignin.html">Admin</a>.</p>
                 <button type="submit" class="submit-btn">Sign In</button>
             </form>
@@ -31,11 +34,20 @@
                 required>
                 <input type="password" class="input-field" placeholder="Enter Password"
                 required>
-                <input type="checkbox" class="checkbox"><span>I agree to the <a href="https://www.tatacliq.com/terms-of-use">Term of Use</a> and <a href="https://www.tatacliq.com/privacy-policy">Privacy Policy</a>.</span>
+                <input type="checkbox" class="checkbox"><span class="spans">I agree to the <a href="https://www.tatacliq.com/terms-of-use">Term of Use</a> and <a href="https://www.tatacliq.com/privacy-policy">Privacy Policy</a>.</span>
                 <button type="submit" class="submit-btn">Sign Up</button>
             </form>
         </div>
     </div>
+    <div id="footer"></div>
 </body>
 </html>
 <script src="/Scripts/signin.js"></script>
+<script>
+    $(function () {
+        $('#header').load('header.html');
+    });
+    $(function () {
+        $('#footer').load('footer.html');
+    })
+</script>
