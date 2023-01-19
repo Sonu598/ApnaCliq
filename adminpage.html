@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<style>
+    .Add-Product {
+        width: 50%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 30%;
+    }
+
+    .Add-Product button {
+        width: 20%;
+        margin: auto;
+    }
+
+    #main,
+    #main1 {
+        width: 80%;
+        display: flex;
+        margin: auto;
+        text-align: center;
+    }
+
+    #main input {
+        width: 80%;
+        margin: auto;
+    }
+
+    .Completed-orders {
+        width: 50%;
+        margin-left: 30%;
+    }
+</style>
+
+<body>
+    <div id="header"></div>
+    <div id="main">
+        <div class="Product-Details">
+            <table>
+                <thead>
+                    <tr>
+                        <td>SeriaL No.</td>
+                        <td>Catagory</td>
+                        <td>Quantity</td>
+                    </tr>
+                </thead>
+                <tbody id="append-product-here">
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="Add-Product">
+            <input type="text" placeholder="Category" id="Category">
+            <input type="text" placeholder="Title" id="Title">
+            <input type="text" placeholder="Price" id="Price">
+            <input type="url" placeholder="Image Url" id="Image-Url">
+            <button id="button">Add Product</button>
+        </div>
+    </div>
+    <div id="main1">
+
+        <div class="Product-Details" id="pending">
+            <h2>Pending orders</h2>
+            <table>
+                <tr>
+                    <td>Serial No.</td>
+                    <td>Order</td>
+                    <td>Status</td>
+                </tr>
+                <tr id="order-status">
+
+                </tr>
+
+            </table>
+        </div>
+        <div class="Completed-orders" id="complete">
+            <h2>Completed Orders</h2>
+
+        </div>
+
+    </div>
+
+    <div>
+        <input type="text" placeholder="title" id="inpu">
+        <button id="search">Search</button>
+        <div id="delete">
+
+             </div>
+          
+    </div>
+</body>
+<script>
+     $(function () {
+        $('#header').load('header.html');
+    })
+</script>
+
+
+</html>
