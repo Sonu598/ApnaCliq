@@ -9,7 +9,8 @@
     background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(/Images/Logo.jpeg);
     background-position: center;
     background-size: cover;
-    position: absolute;
+    /* position: absolute; */
+    margin-top: 110px;
 }
 .form-box{
     width: 380px;

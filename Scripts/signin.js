@@ -18,7 +18,7 @@ function signin(){
 // scripts for sign up
 
 let UserID=document.getElementById("signup-userid");
-let emailid=document.getElementById("emailid")
+let emailid=document.getElementById("signup-email")
 let Password=document.getElementById("signup-password");
 let LSData= [];
 let btn=document.getElementById("signup-btn");
@@ -33,6 +33,7 @@ btn.addEventListener("click",(e)=>{
     if(accountdata==null) accountdata=[];
     accountdata.push(obj);
     localStorage.setItem("account-data",JSON.stringify(accountdata));
+    alert("Sign Up succesful !");
 });
 
 // scripts for sign in
@@ -47,7 +48,6 @@ button.addEventListener("click",(e)=>{
         if(userid.value==element.userid){
             if(password.value==element.password){
                alert("Welcome to ApnaCliq!");
-               window.open("/index.html");
             }else{
                 alert("Wrong Password. Re-Enter your Password!");
             }
