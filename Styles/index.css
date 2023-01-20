@@ -1,6 +1,10 @@
 *{
     box-sizing: border-box;
 }
+
+main{
+    margin-top: 108px;
+}
 body{
     background-color: #d8d8d8;
 }

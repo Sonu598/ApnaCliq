@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Styles/index.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    
+</head>
+<body>
+    <header></header>
+    <main>
+        <div id="container"></div>
+        
+    </main>
+    <footer></footer>
+</body>
+ <script>
+    let data=JSON.parse(localStorage.getItem("addToCart"))||[]
+
+    displayProducts(data)
+    function displayProducts(data){
+          container.innerHTML=null
+          let cartArr=[]
+          data.forEach((e,i)=>{
+             let cart=
+             `<div class="cart">
+             <div class="image"><img src=${e.image}></div>
+             <h3 class="title">${e.title}</h3>
+             <p class="desc">${e.description}</p>
+             <h3 class="price">₹${e.price}</h3>
+             <div class="rating"><h4>${e.rating.rate} (${e.rating.count})</h4></div>
+             <button class="productsBtn" data-id=${i}>+</button>
+             <span id="quantity">1</span>
+             <button class="productsBtn" data-id=${i}>-</button>
+           </div>`
+
+            cartArr.push(cart)
+          })
+
+          container.innerHTML=cartArr.join("")
+ 
+     }
+
+ </script>
+</html>
+
+<script>
+    $(function () {
+        $('header').load('header.html');
+    }) 
+</script>
+
+<script>
+    $(function () {
+        $('footer').load('footer.html');
+    }) 
+</script>
