@@ -12,16 +12,49 @@
 <body>
     <header></header>
     <main>
+        <div id="functionality">
+            <!-- <h3>Filters and Sort</h3> -->
+            <div id="filterByPrice">
+               <input type="number" id="lower" placeholder="Add Minimun Price">
+               <input type="number" id="upper" placeholder="Add Maximum Price">
+               <button id="filterByPrice-btn">submit</button>
+           </div>
+    
+           <div id="sortDiv">
+               <select id="sort">
+                   <option value="">Sort By Price</option>
+                   <option value="lowToHigh">lowToHigh</option>
+                   <option value="highToLow">highToLow</option>
+               </select>
+           </div>
+    
+           <div id="sortByRating">
+               <select id="ratingSort">
+                   <option value="">Filter By Rating</option>
+                   <option value="1">1</option>
+                   <option value="2">2</option>
+                   <option value="3">3</option>
+                   <option value="4">4</option>
+                   <option value="5">5</option> 
+               </select>
+           </div>
+       </div>
+
         <div id="container"></div>
-        
+        <div id="TotalPrice">
+            <h1 id="total">Your Total cart Price is:- ₹<span id="cart-total">0</span> <span> <a href="./userDatail.html">
+                <button> Order Now </button> </a> </span></h1>
+        </div>
     </main>
     <footer></footer>
 </body>
  <script>
     let data=JSON.parse(localStorage.getItem("addToCart"))||[]
-
+    let cartTotal=document.getElementById("cart-total")
+    
     displayProducts(data)
     function displayProducts(data){
+         let sum=0;
           container.innerHTML=null
           let cartArr=[]
           data.forEach((e,i)=>{
@@ -32,17 +65,96 @@
              <p class="desc">${e.description}</p>
              <h3 class="price">₹${e.price}</h3>
              <div class="rating"><h4>${e.rating.rate} (${e.rating.count})</h4></div>
-             <button class="productsBtn" data-id=${i}>+</button>
-             <span id="quantity">1</span>
-             <button class="productsBtn" data-id=${i}>-</button>
+             <button class="increamentBtn" data-id=${i}>+</button>
+             <span id="quantity">${e.quantity}</span>
+             <button class="decreamentBtn" data-id=${i}>-</button>
+             <button class="removeBtn">Remove</button>
            </div>`
 
             cartArr.push(cart)
+            sum+=e.price*e.quantity
           })
 
           container.innerHTML=cartArr.join("")
- 
+          cartTotal.innerHTML=sum
+
+          //increament quantity
+          let increamentBtn=document.getElementsByClassName("increamentBtn")
+          for(let btn of increamentBtn ){
+            btn.addEventListener('click',(e)=>{
+                data[+e.target.dataset.id].quantity++
+                localStorage.setItem("addToCart",JSON.stringify(data))
+                displayProducts(data)
+            })
+          }
+
+          //decreament quantity
+          let decreamentBtn=document.getElementsByClassName("decreamentBtn")
+          for(let btn of decreamentBtn ){
+            btn.addEventListener('click',(e)=>{
+                data[+e.target.dataset.id].quantity<=1 ? data.splice(e.target.dataset.id,1): data[+e.target.dataset.id].quantity--
+                localStorage.setItem("addToCart",JSON.stringify(data))
+                displayProducts(data)
+            })
+          }
+
+          //remove btn
+          let removeBtn=document.getElementsByClassName("removeBtn")
+          for(let btn of removeBtn ){
+            btn.addEventListener('click',(e)=>{
+                data.splice(+e.target.dataset.id,1)
+                localStorage.setItem("addToCart",JSON.stringify(data))
+                displayProducts(data)
+            })
+          }
      }
+
+     //functionality
+     let lower=document.getElementById("lower")
+     let upper=document.getElementById('upper')
+     let filterByPrice_btn=document.getElementById("filterByPrice-btn")
+     filterByPrice_btn.addEventListener("click",()=>{
+         let filterData= data.filter((e)=>{
+            if(e.price>=lower.value && e.price<=upper.value)
+            {
+                return e
+            }
+        })
+        displayProducts(filterData)
+     })
+
+    //sort
+     let sort=document.getElementById("sort")
+     sort.addEventListener('change',()=>{
+      if(sort.value===""){
+        displayProducts(data)
+      }else if(sort.value==="highToLow"){
+        let filterData=data.sort((e,e2)=>{
+            return e2.price-e.price
+         })
+        displayProducts(filterData)
+      }else if(sort.value==="lowToHigh"){
+        let filterData=data.sort((e,e2)=>{
+            return e.price-e2.price
+         })
+        displayProducts(filterData)
+      }
+
+     })
+
+     //sortRating
+     let ratingSort=document.getElementById("ratingSort")
+     ratingSort.addEventListener("change",()=>{
+       if(ratingSort.value==="")
+       {
+        displayProducts(data)
+       }else{
+          let filterData=data.filter((e)=>{
+             return Math.floor(+(e.rating['rate']))===+ratingSort.value
+          })
+          displayProducts(filterData)
+       }
+     })
 
  </script>
 </html>

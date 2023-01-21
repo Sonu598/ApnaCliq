@@ -71,7 +71,7 @@ img{
     justify-content: space-between;
 }
 
-.productsBtn{
+.productsBtn,.increamentBtn,.decreamentBtn,.removeBtn,#TotalPrice button{
     background-color:rgb(58, 56, 56);
     border: none;
     color: white;
