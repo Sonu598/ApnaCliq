@@ -15,7 +15,7 @@
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
     <style>
-        
+
     </style>
 </head>
 
@@ -94,17 +94,18 @@
                             </span></li>
                     </ul>
                 </div>
-            
 
 
 
-             
+
+
 
                 <div id="btn_search">
                     <span id="search_logo" class="material-symbols-outlined">
                         search
                     </span>
-                    <input id="search" type="text" placeholder="search" name="search">
+                    <input oninput="getProducts()" id="search" type="text" placeholder="search" name="search">
+                    <button onclick="serchitems()" id="searchBtn">Search</button>
                     <span id="closeBtn" class="material-symbols-outlined">
                         close
                     </span>
@@ -130,7 +131,7 @@
         </div>
     </div>
 
-       <!-- ------------------- submenulist ------------------- -->
+    <!-- ------------------- submenulist ------------------- -->
 
     <div id="ddown">
         <div id="categories_submenu">
@@ -140,7 +141,7 @@
                         <h4>Women's Fastion</h4>
                     </div>
                     <div>
-                        <span class="material-symbols-outlined itemsArrow">
+                        <span class="material-symbols-outlined " id="itemsArrow">
                             navigate_next
                         </span>
                     </div>
@@ -150,7 +151,7 @@
                         <h4>Man"s Fastion</h4>
                     </div>
                     <div>
-                        <span class="material-symbols-outlined itemsArrow">
+                        <span class="material-symbols-outlined " id="itemsArrow">
                             navigate_next
                         </span>
                     </div>
@@ -160,7 +161,7 @@
                         <h4>Kid's Fastion </h4>
                     </div>
                     <div>
-                        <span class="material-symbols-outlined itemsArrow">
+                        <span class="material-symbols-outlined " id="itemsArrow">
                             navigate_next
                         </span>
                     </div>
@@ -170,7 +171,7 @@
                         <h4>Home & Kitchen</h4>
                     </div>
                     <div>
-                        <span class="material-symbols-outlined itemsArrow">
+                        <span class="material-symbols-outlined " id="itemsArrow">
                             navigate_next
                         </span>
                     </div>
@@ -180,7 +181,7 @@
                         <h4>Beauty</h4>
                     </div>
                     <div>
-                        <span class="material-symbols-outlined itemsArrow ">
+                        <span class="material-symbols-outlined " id="itemsArrow">
                             navigate_next
                         </span>
                     </div>
@@ -190,7 +191,7 @@
                         <h4>Gadgets</h4>
                     </div>
                     <div>
-                        <span class="material-symbols-outlined itemsArrow">
+                        <span class="material-symbols-outlined " id="itemsArrow">
                             navigate_next
                         </span>
                     </div>
@@ -200,7 +201,7 @@
                         <h4>Jewellery</h4>
                     </div>
                     <div>
-                        <span class="material-symbols-outlined itemsArrow">
+                        <span class="material-symbols-outlined " id="itemsArrow">
                             navigate_next
                         </span>
                     </div>
@@ -210,7 +211,7 @@
                         <h4>Accessories</h4>
                     </div>
                     <div>
-                        <span class="material-symbols-outlined itemsArrow">
+                        <span class="material-symbols-outlined " id="itemsArrow">
                             navigate_next
                         </span>
                     </div>
@@ -218,12 +219,12 @@
             </div>
             <div class="submenu1">
                 <div style="color: #212121; font-weight: bold;">Shop All Ethnic Wear</div>
-                <div><a href="">Kurti & kurta</a></div>
-                <div> <a href="">suits</a></div>
-                <div> <a href="">Sarees</a></div>
-                <div> <a href="">Bottoms</a></div>
-                <div> <a href="">Bloues & fabrics</a></div>
-                <div><a href="">Dipatta</a></div>
+                <div><a href="products.html">Kurti & kurta</a></div>
+                <div> <a href="products.html">suits</a></div>
+                <div> <a href="products.html">Sarees</a></div>
+                <div> <a href="products.html">Bottoms</a></div>
+                <div> <a href="products.html">Bloues & fabrics</a></div>
+                <div><a href="products.html">Dipatta</a></div>
                 <div style="color: #212121; font-weight: bold;">Shop All Western Wear</div>
                 <div><a href="">Top & Tunic</a></div>
                 <div><a href="">Dresses</a></div>
@@ -288,7 +289,7 @@
         </div>
     </div>
 
-   <!-- ------------------- submenulist End ------------------- -->
+    <!-- ------------------- submenulist End ------------------- -->
 
     <!-- <div id="main" style="background: red; height: 1000px;">
         <h1>hello</h1>
@@ -384,22 +385,25 @@
 
 
     let navTop = document.getElementById("nav_right_top");
+    let navBottom = document.getElementById("nav_bottom");
     let logo = document.getElementById("nav_logo");
     let nav = document.getElementById("nav");
 
     $(window).on('scroll', function () {
         if ($(window).scrollTop()) {
-            // $('nav').addClass('black');
-            navTop.style.display = "none";
-            logo.style.marginTop = "4px";
-            nav.style.height = "80px";
+
+            nav.style.marginTop = "-30px";
+            logo.style.marginTop = "25px";
+            // navBottom.style.margin="15px"
         }
         else {
-            // $('nav').removeClass('black');
-            navTop.style.display = "flex";
-            logo.style.marginTop = "20px";
-            nav.style.height = "100px";
+
+            nav.style.marginTop = "0px";
+            logo.style.marginTop = "15px";
+            // navBottom.style.margin="10px"
+
         }
     })
 
 </script>
+<script src="Scripts/search.js"></script 
