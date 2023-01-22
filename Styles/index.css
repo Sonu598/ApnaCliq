@@ -75,13 +75,15 @@ img{
     background-color:rgb(58, 56, 56);
     border: none;
     color: white;
-    padding: 8px 18px;
+    padding: 7px 16px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    margin: 8px 0px;
+    font-size: 14px;
+    margin: 7px 0px;
+    border-radius: 3px;
     cursor: pointer;
+    
 }
 
 #functionality{
@@ -91,16 +93,39 @@ img{
     margin: auto;
     margin-bottom: 10px;
    }
-  select,input,#filterByPrice-btn{
+  select,#lower,#upper,#filterByPrice-btn{
     background-color: rgb(58, 56, 56);
     color: white;
     padding: 8px;
     font-size: 14px;
   }
 
-  select:hover,button:hover{
+  select:hover,button:hover,#TotalPrice button:hover,#filterByPrice-btn:hover{
     background-color: red;
   }
+
+  #TotalPrice{
+    width: 50%;
+    margin: auto;
+    margin-top: 19px;
+  }
+
+  #TotalPrice button{
+    position: relative;
+    bottom: 7px;
+  }
+
+  button{
+    border: none;
+  }
+  /* #star{
+    width: 12px;
+    background-color: red;
+  } */
+  #star img{
+    width: 15px;
+  }
+
 
 
 

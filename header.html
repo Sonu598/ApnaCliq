@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>navbar</title>
     <link rel="stylesheet" href="Styles/header.css">
+    <link rel="stylesheet" href="Styles/search.css">
 
     <!-- google fonts -->
     <link rel="stylesheet"
@@ -105,7 +106,7 @@
                         search
                     </span>
                     <input oninput="getProducts()" id="search" type="text" placeholder="search" name="search">
-                    <button onclick="serchitems()" id="searchBtn">Search</button>
+                    <!-- <button onclick="serchitems()" id="searchBtn">Search</button> -->
                     <span id="closeBtn" class="material-symbols-outlined">
                         close
                     </span>
@@ -291,9 +292,9 @@
 
     <!-- ------------------- submenulist End ------------------- -->
 
-    <!-- <div id="main" style="background: red; height: 1000px;">
-        <h1>hello</h1>
-    </div> -->
+    <div id="searchItems">
+        <div id="sTtems"></div>
+    </div>
 
 </body>
 
@@ -318,10 +319,12 @@
 
     let searchbtn = document.getElementById('search');
     let closeBtn = document.getElementById('closeBtn');
+    let searcItems = document.getElementById('searchItems');
     searchbtn.addEventListener('click', () => {
         btn_search.style.backgroundColor = "#ffffff";
         search.style.backgroundColor = "#ffffff";
         closeBtn.style.display = "block";
+        searcItems.style.display = "grid";
 
     });
 
@@ -330,6 +333,8 @@
         btn_search.style.backgroundColor = "#4A4A4A";
         search.style.backgroundColor = "#4A4A4A";
         closeBtn.style.display = "none";
+        searcItems.style.display = "none";
+        searchbtn.value = null;
     });
 
     /* ---------------- dropdown menu scripts ------------- */

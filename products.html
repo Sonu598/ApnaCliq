@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Products</title>
     <link rel="stylesheet" href="./Styles/index.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
@@ -47,6 +47,7 @@
    <script>
      let products=JSON.parse(localStorage.getItem("products"))||[]
      let addToCart=JSON.parse(localStorage.getItem('addToCart'))||[]
+    //  let countOfProducts=localStorage.getItem('count')||1;
      let container=document.getElementById("container")
 
      displayProducts(products)
@@ -62,7 +63,14 @@
              <h3 class="title">${e.title}</h3>
              <p class="desc">${e.description}</p>
              <h3 class="price">₹${e.price}</h3>
-             <div class="rating"><h4>${e.rating.rate} (${e.rating.count})</h4></div>
+             <div class="rating"><h4> ${e.rating.rate}
+              <span id="star">
+                <img src="./Images/star-vector-png-transparent-image-pngpix-21.png">
+                <img src="./Images/star-vector-png-transparent-image-pngpix-21.png">
+                <img src="./Images/star-vector-png-transparent-image-pngpix-21.png">
+                <img src="./Images/star-vector-png-transparent-image-pngpix-21.png">
+             </span>
+              (${e.rating.count})</h4></div>
              <button class="productsBtn" data-id=${i}>Add to Cart</button>
            </div>`
 
