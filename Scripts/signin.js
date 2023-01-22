@@ -34,28 +34,29 @@ btn.addEventListener("click",(e)=>{
     accountdata.push(obj);
     localStorage.setItem("account-data",JSON.stringify(accountdata));
     alert("Sign Up succesful !");
+    window.open("/signin.html")
 });
 
 // scripts for sign in
 
-let LSdata=JSON.parse(localStorage.getItem("account-data")) || [];
+let LSdata=JSON.parse(localStorage.getItem("account-data"));
 let userid=document.getElementById("signin-userid");
 let button=document.getElementById("signin-btn");
 let password=document.getElementById("signin-password");
 button.addEventListener("click",(e)=>{
     e.preventDefault();
-    if (LSdata==[]){
-        LSdata=null;
-        userid=null;
-    }    
+    if(LSdata===null) {
+        LSdata=[];
+    }
     LSdata.forEach((element,index)=>{
-        if(userid.value==element.userid || null){
+        if(userid.value==element.userid){
             if(password.value==element.password){
                alert("Welcome to ApnaCliq!");
+               window.open("/index.html")
             }else{
                 alert("Wrong Password. Re-Enter your Password!");
             }
-        }else{
+        }else if(LSdata===[] || userid.value!=element.userid){
             alert("User ID not found! Sign Up Now!");
         }
     })   
