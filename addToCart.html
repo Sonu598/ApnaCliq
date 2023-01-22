@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AddToCart</title>
     <link rel="stylesheet" href="./Styles/index.css">
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     
@@ -37,12 +37,14 @@
                    <option value="4">4</option>
                    <option value="5">5</option> 
                </select>
+               
            </div>
        </div>
-
+        
+       <!-- container -->
         <div id="container"></div>
         <div id="TotalPrice">
-            <h1 id="total">Your Total cart Price is:- ₹<span id="cart-total">0</span> <span> <a href="./userDatail.html">
+            <h1 id="total">Your Total cart Price is:- ₹<span id="cart-total">0</span> <span> <a href="./payment.html">
                 <button> Order Now </button> </a> </span></h1>
         </div>
     </main>
@@ -64,7 +66,14 @@
              <h3 class="title">${e.title}</h3>
              <p class="desc">${e.description}</p>
              <h3 class="price">₹${e.price}</h3>
-             <div class="rating"><h4>${e.rating.rate} (${e.rating.count})</h4></div>
+             <div class="rating"><h4>${e.rating.rate}
+             <span id="star">
+                <img src="./Images/star-vector-png-transparent-image-pngpix-21.png">
+                <img src="./Images/star-vector-png-transparent-image-pngpix-21.png">
+                <img src="./Images/star-vector-png-transparent-image-pngpix-21.png">
+                <img src="./Images/star-vector-png-transparent-image-pngpix-21.png">
+             </span>
+              (${e.rating.count} Reviews)</h4></div>
              <button class="increamentBtn" data-id=${i}>+</button>
              <span id="quantity">${e.quantity}</span>
              <button class="decreamentBtn" data-id=${i}>-</button>
