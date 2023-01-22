@@ -34,7 +34,7 @@ btn.addEventListener("click",(e)=>{
     accountdata.push(obj);
     localStorage.setItem("account-data",JSON.stringify(accountdata));
     alert("Sign Up succesful !");
-    window.open("/signin.html")
+    window.location.href="/signin.html";
 });
 
 // scripts for sign in
@@ -52,7 +52,7 @@ button.addEventListener("click",(e)=>{
         if(userid.value==element.userid){
             if(password.value==element.password){
                alert("Welcome to ApnaCliq!");
-               window.open("/index.html")
+               window.location.href="/index.html";
             }else{
                 alert("Wrong Password. Re-Enter your Password!");
             }

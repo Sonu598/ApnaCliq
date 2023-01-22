@@ -204,7 +204,7 @@ document.getElementById('checkot').addEventListener('click',()=>{
     let promt = prompt("Enter your OTP here")
         
     if(+promt === gotp){
-        let comf =  confirm(`Confirm your Order! of $${globaltotal}`)
+        let comf =  confirm(`Confirm your Order! of ₹${globaltotal}`)
         if(comf){
             
             
@@ -212,10 +212,11 @@ document.getElementById('checkot').addEventListener('click',()=>{
             localStorage.setItem('addToCart',JSON.stringify(empty))
             location.reload()
             alert('Your order will be dilvered With in 4 Days')
+            
         }
     }
+window.location.href="/orderplace.html";
 })
-
 function random(){
     let opt=Math.floor(1000 + Math.random() * 9000);
     return opt
