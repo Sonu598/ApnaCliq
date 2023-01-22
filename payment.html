@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300&family=Roboto:wght@100&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./payment.css">
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+    <title>Payment</title>
+</head>
+<style>
+    *{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.logo{
+    margin-top: 5px;
+    margin-left: 30%;
+    width: 400px;
+    height: 200px;
+}
+.pay{
+    width: 99%;
+}
+.nav{
+    margin-top: 4%;
+    display: flex;
+}
+.span-line{
+    margin: 2% 40% 0%;
+}
+.main{
+    display: flex;
+    width: 90%;
+    padding: 3%;
+    margin: auto;
+    margin-top: 50px;
+}
+#product{
+    width: 80%;
+    
+    margin: 20px;
+    
+}
+#product :nth-child(1){
+    width: 80%;
+    height: 20%;
+    margin: 5px;
+    padding-top: 30px;
+    text-align: center;
+    background-color: #EEEEEE;
+}
+#product :nth-child(2){
+    width: 80%;
+    height: 20%;
+    margin: 5px;
+    padding-top: 30px;
+    text-align: center;
+    background-color: #EEEEEE;
+}
+#product :nth-child(3){
+    display: none;
+    width: 80%;
+    height: 10%;
+    margin: 5px;
+    margin-top: 50px;
+    padding-top: 15px;
+    text-align: center;
+    background-color: #EEEEEE;
+}
+.overviev{
+    width: 40%;
+    background-color: rgb(246, 246, 246);
+    padding: 0% 2%;
+    margin: 0px 5%;
+}
+.over-div{
+    display: flex;
+    justify-content: space-between;
+}
+.checkout{
+    display: block;
+    width: 99%;
+    height: 40px;
+    margin: auto;
+    margin: 20px 0px;
+    background-color: black;
+    color: white;
+}
+
+.pdiv{
+    display: flex;
+    margin: 1% 0%;
+    background-color: rgb(246, 246, 246);
+}
+.idiv{
+    width: 40%;
+    margin-right: 20px;
+}
+.idiv > img{
+    width: 100%;
+    height: 99%;
+}
+.ddiv{
+    margin: auto;
+}
+.ddiv p{
+    margin-left: 20%;
+}
+.ddiv h4{
+    margin-left: 20%;
+}
+.ddiv button{
+    width: 70%;
+    margin-left: 20%;
+}
+
+@media screen and (min-width: 480px) and (max-width:990px) {
+    .main{
+      flex-direction: column;
+    }
+    #product{
+      width: 96%;
+    }
+    .overviev{
+      width: 96%;
+    }
+    #product :nth-child(1){
+        width: 98%;
+    }
+    #product :nth-child(2){
+        width: 98%;
+    }
+    #product :nth-child(3){
+        width: 98%;
+   }
+  }
+</style>
+<body>
+    <div class="nav">
+        <a href="./cart.html"><img src="./img/icons8-back-arrow-50.png" alt="" style="margin: 10px;"></a>
+        <img src="https://corp.ezetap.com/uploads/blogs/Blog-1052x621-1_(1).jpg" alt="" class="logo">
+    </div>
+    <div class="main">
+        <div id="product">
+            <div id="cod">Cash ON Delivery</div>
+            <div id="online">Pay Online</div>
+            <div id="otp"></div>
+        </div>
+        <div class="overviev">
+            <div >
+                <div class="over-div">
+                    <p>Subtotal</p>
+                    <p id="total">0</p>
+                </div>
+                <div class="over-div">
+                    <p>Estimated Schoping</p>
+                    <p>Free</p>
+                </div>
+                <div class="over-div">
+                    <p>Sales Tax</p>
+                    <p>Calculate and Pay</p>
+                </div>
+                <hr>
+                <div class="over-div">
+                    <p>Total</p>
+                    <p id="tota">0</p>
+                </div>
+            </div>
+            <div class="overview-buttons">
+                <button class="checkout" id="checkot">Make Payment</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let cartdata = JSON.parse(localStorage.getItem('cart')) || []
+let empty = []
+let globaltotal;
+let gotp;
+priceDom(cartdata)
+
+document.getElementById('cod').addEventListener('click',()=>{
+    
+    let randomnum = random()
+    document.getElementById('otp').style.display="block";
+    document.getElementById('otp').innerText=`Your OTP is For COD Payment ${randomnum}`
+    gotp=randomnum
+})
+
+document.getElementById('online').addEventListener('click',()=>{
+    
+    let randomnum = random()
+    document.getElementById('otp').style.display="block";
+    document.getElementById('otp').innerText=`Your OTP is For Online Payment ${randomnum}`
+    gotp=randomnum
+    
+})
+
+document.getElementById('checkot').addEventListener('click',()=>{
+    let promt = prompt("Enter your OTP here")
+        
+    if(+promt === gotp){
+        let comf =  confirm(`Confirm your Order! of $${globaltotal}`)
+        if(comf){
+            
+            
+            localStorage.setItem('orderdItems',JSON.stringify(cartdata))
+            localStorage.setItem('cart',JSON.stringify(empty))
+            location.reload()
+            alert('Your order will be dilvered With in 4 Days')
+        }
+    }
+})
+
+function random(){
+    let opt=Math.floor(1000 + Math.random() * 9000);
+    return opt
+}
+function priceDom(data){
+    let total=0;
+    let count=0
+    for(let i=0;i<data.length;i++){
+        count++
+        total+= data[i].qty*data[i].price 
+    }
+    globaltotal = total
+    document.getElementById('total').innerText=total
+    document.getElementById('tota').innerText=total
+}
+
+
+</script>
+</html>
