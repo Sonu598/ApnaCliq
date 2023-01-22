@@ -23,7 +23,7 @@ setInterval(()=>{
 },2500)
 
 async function getProductsData(){
-    let res= await fetch("./userAPIs/products.json")
+    let res= await fetch("https://vishalserv.onrender.com/products")
     let data= await res.json()
 
     //#logo
