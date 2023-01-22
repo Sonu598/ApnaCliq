@@ -1,11 +1,7 @@
 let searchData = JSON.parse(localStorage.getItem("searchProducts")) || [];
 
-let searcItems = document.getElementById('main');
-if (searchData.innerHTML == null) {
-    searchData.innerHTML = "hello"
-} else {
+let searcItems = document.getElementById('searchItems');
 
-}
 
 
 
@@ -19,11 +15,17 @@ async function getProducts() {
         let products = data.filter((e) => {
             let query = search1.toLowerCase();
 
-            return e.category
+            return e.description
                 .toLowerCase().indexOf(query) !== -1 ? true : false;
 
-        });
-        localStorage.setItem("searchProducts", JSON.stringify(products));
+        }) || null;
+        // localStorage.setItem("searchProducts", JSON.stringify(products));
+        // productsDisplay(searchData);
+        if (products.length > 1) {
+            productsDisplay(products)
+        } else {
+            searcItems.innerHTML = productsNotFound()
+        }
 
         console.log(products)
 
@@ -59,7 +61,12 @@ function productsDisplay(data) {
              <p>${e.description}</p>
           </div>
           <div id="price">
-             <h5>500</h5>
+            <div>
+              <h5>${e.price}</h5>
+             </div>
+             <div = id="buyBtn">
+              <button>Buy</button>
+             </div>
           </div>
         
         </div>  `
@@ -67,10 +74,17 @@ function productsDisplay(data) {
         cartItems.push(cart)
     })
 
-    searcItems.innerHTML = "hello";
+    searcItems.innerHTML = cartItems.join("");
+
+}
+function productsNotFound() {
+    return `
+    
+    <div = id="heading">
+    <h2>Products not Found</h2>
+   </div>
+    `
 
 }
 
-function serchitems() {
-    productsDisplay(searchData);
-}
+
