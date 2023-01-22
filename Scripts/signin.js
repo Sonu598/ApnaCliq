@@ -38,14 +38,18 @@ btn.addEventListener("click",(e)=>{
 
 // scripts for sign in
 
-let LSdata=JSON.parse(localStorage.getItem("account-data"));
+let LSdata=JSON.parse(localStorage.getItem("account-data")) || [];
 let userid=document.getElementById("signin-userid");
 let button=document.getElementById("signin-btn");
 let password=document.getElementById("signin-password");
 button.addEventListener("click",(e)=>{
     e.preventDefault();
+    if (LSdata==[]){
+        LSdata=null;
+        userid=null;
+    }    
     LSdata.forEach((element,index)=>{
-        if(userid.value==element.userid){
+        if(userid.value==element.userid || null){
             if(password.value==element.password){
                alert("Welcome to ApnaCliq!");
             }else{
