@@ -20,6 +20,7 @@ function adminsignin(data){
         if(userid.value==element.UserID){
             if(password.value==element.password){
                alert("Welcome Back Admin !");
+               window.open("/adminpage.html");
             }else{
                 alert("Wrong Password. Re-Enter your Password !");
             }
