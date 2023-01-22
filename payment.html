@@ -177,7 +177,7 @@
     </div>
 </body>
 <script>
-    let cartdata = JSON.parse(localStorage.getItem('cart')) || []
+    let cartdata = JSON.parse(localStorage.getItem('addToCart')) || []
 let empty = []
 let globaltotal;
 let gotp;
@@ -209,7 +209,7 @@ document.getElementById('checkot').addEventListener('click',()=>{
             
             
             localStorage.setItem('orderdItems',JSON.stringify(cartdata))
-            localStorage.setItem('cart',JSON.stringify(empty))
+            localStorage.setItem('addToCart',JSON.stringify(empty))
             location.reload()
             alert('Your order will be dilvered With in 4 Days')
         }
@@ -225,7 +225,7 @@ function priceDom(data){
     let count=0
     for(let i=0;i<data.length;i++){
         count++
-        total+= data[i].qty*data[i].price 
+        total+= data[i].quantity*data[i].price 
     }
     globaltotal = total
     document.getElementById('total').innerText=total
